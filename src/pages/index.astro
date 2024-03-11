@@ -1,69 +1,57 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Badge from '../components/Badge.astro';
-import SectionContainer from '../components/SectionContainer.astro';
-import SocialPill from '../components/SocialPill.astro';
-import Experience from '../components/Experience.astro';
-import LinkedInIcon from '../icons/LinkedIn.astro';
-import GitHubIcon from '../icons/GitHub.astro';
-import MailIcon from '../icons/Mail.astro';
-import Briefcase from '../icons/Briefcase.astro';
 
+import AboutMe from "../components/AboutMe.astro"
+import SectionContainer from '../components/SectionContainer.astro';
+import Experience from '../components/Experience.astro';
+import ProfileCheck from "../icons/ProfileCheck.astro"
+import Projects from "../components/Projects.astro"
+import Briefcase from '../icons/Briefcase.astro';
+import CodeIcon from "../icons/Code.astro"
+import Hero from '../components/Hero.astro'
 ---
 
 <Layout 
 	title="Portafolio de Marcelo Aranguiz - Desarrollador Backend y Fronted"
 >
-	<main class="px-2">
-		<SectionContainer class="py-44 pb-22">
-			<img 
-        		class="rounded-full w-12 h-12 mb-4"
-        		src="https://avatars.githubusercontent.com/u/133079144?v=4" 
-        		alt="marcelodev photo"
-    		>
-		<h1 
-		class="text white text-3xl md:text-4xl lg:text-5xl font-bold flex
-		flex-row gap-x-4 pb-6 lg:pb-10"
-		>
-			Soy Marcelo Aranguiz <a 
-				href="https://cl.linkedin.com/in/marcelo-aranguiz-dev" 
-				target="_blank" 
-				rel="noopener" 
-				class="flex justify-center items-center"
-			>
-				<Badge>Contacta conmigo</Badge>
-			</a>
-		</h1>
-		<h2 class="text-2xl text-wrap max-w-[700px]">
-			<span>Trainee Developer.</span> 
-			<span class="text-blue-200/90">Especializado en el desarrollo</span> 
-			<span class="text-red-200/90">Frontend y Backend.</span>
-			<span class="opacity-75">Comprometido en crear soluciones innovadoras para satisfacer las necesidades de mis clientes.</span>
-		</h2>
-
-		<nav class="flex gap4 mt-8 flex-wrap">
-			<SocialPill href="https://cl.linkedin.com/in/marcelo-aranguiz-dev" >
-				<LinkedInIcon class="size-4 md:size-6"/>
-				LinkedIn
-			</SocialPill>
-			<SocialPill href="https://github.com/MarceloAranguizDev" >
-				<GitHubIcon class="size-4 md:size-6"/>
-				GitHub
-			</SocialPill>
-			<SocialPill href="mailto:marceloaranguiz.dev@gmail.com" >
-				<MailIcon class="size-4 md:size-6"/>
-				marceloaranguiz.dev@gmail.com
-			</SocialPill>
-		</nav>
+	<main class="px-4">
+		<SectionContainer class="py-16 md:py-36">
+			<Hero>
+				</slot>
+			</Hero>
 		</SectionContainer>
-
-		<SectionContainer id="experiencia">
-			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
-				<Briefcase class="size-7"/>
-				Experienca Laboral
-			</h2>
-			<Experience/>
-		</SectionContainer>
+		
+		<div class="space-y-24">
+			<SectionContainer id="experiencia">
+			  <h2
+				class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+			  >
+				<Briefcase class="size-8" />
+				Experiencia laboral
+			  </h2>
+			  <Experience />
+			</SectionContainer>
+		
+			<SectionContainer id="proyectos">
+			  <h2
+				class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+			  >
+				<CodeIcon class="size-7" />
+				Proyectos
+			  </h2>
+			  <Projects />
+			</SectionContainer>
+		
+			<SectionContainer id="sobre-mi">
+			  <h2
+				class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
+			  >
+				<ProfileCheck class="size-8" />
+				Sobre mí
+			  </h2>
+			  <AboutMe />
+			</SectionContainer>
+		  </div>
 	</main>
 </Layout>
 
