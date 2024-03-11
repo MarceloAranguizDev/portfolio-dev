@@ -1,21 +1,30 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
 import Badge from '../components/Badge.astro';
+import SectionContainer from '../components/SectionContainer.astro';
 import SocialPill from '../components/SocialPill.astro';
+import Experience from '../components/Experience.astro';
 import LinkedInIcon from '../icons/LinkedIn.astro';
 import GitHubIcon from '../icons/GitHub.astro';
-import MailIcon from '../icons/Mail.astro'
+import MailIcon from '../icons/Mail.astro';
+import Briefcase from '../icons/Briefcase.astro';
 
 ---
 
 <Layout 
 	title="Portafolio de Marcelo Aranguiz - Desarrollador Backend y Fronted"
 >
-	<main>
-		<section class="w-full mx-auto lg:w-[740px] py-44">
+	<main class="px-2">
+		<SectionContainer class="py-44 pb-22">
+			<img 
+        		class="rounded-full w-12 h-12 mb-4"
+        		src="https://avatars.githubusercontent.com/u/133079144?v=4" 
+        		alt="marcelodev photo"
+    		>
 		<h1 
-		class="text white text-5xl font-bold flex flex-row gap-x-4 pb-10">
+		class="text white text-3xl md:text-4xl lg:text-5xl font-bold flex
+		flex-row gap-x-4 pb-6 lg:pb-10"
+		>
 			Soy Marcelo Aranguiz <a 
 				href="https://cl.linkedin.com/in/marcelo-aranguiz-dev" 
 				target="_blank" 
@@ -25,28 +34,36 @@ import MailIcon from '../icons/Mail.astro'
 				<Badge>Contacta conmigo</Badge>
 			</a>
 		</h1>
-		<h2 class="text-2xl text-wrap">
+		<h2 class="text-2xl text-wrap max-w-[700px]">
 			<span>Trainee Developer.</span> 
-			<span class="text-yellow-200/90">Especializado en el desarrollo</span> 
+			<span class="text-blue-200/90">Especializado en el desarrollo</span> 
 			<span class="text-red-200/90">Frontend y Backend.</span>
 			<span class="opacity-75">Comprometido en crear soluciones innovadoras para satisfacer las necesidades de mis clientes.</span>
 		</h2>
 
-		<nav class="flex gap-x-2 mt-8">
+		<nav class="flex gap4 mt-8 flex-wrap">
 			<SocialPill href="https://cl.linkedin.com/in/marcelo-aranguiz-dev" >
-				<LinkedInIcon class="w-6 h-6"/>
+				<LinkedInIcon class="size-4 md:size-6"/>
 				LinkedIn
 			</SocialPill>
 			<SocialPill href="https://github.com/MarceloAranguizDev" >
-				<GitHubIcon class="w-6 h-6"/>
+				<GitHubIcon class="size-4 md:size-6"/>
 				GitHub
 			</SocialPill>
-			<SocialPill href="https://github.com/MarceloAranguizDev" >
-				<MailIcon class="w-6 h-6"/>
+			<SocialPill href="mailto:marceloaranguiz.dev@gmail.com" >
+				<MailIcon class="size-4 md:size-6"/>
 				marceloaranguiz.dev@gmail.com
 			</SocialPill>
 		</nav>
-		</section>
+		</SectionContainer>
+
+		<SectionContainer id="experiencia">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+				<Briefcase class="size-7"/>
+				Experienca Laboral
+			</h2>
+			<Experience/>
+		</SectionContainer>
 	</main>
 </Layout>
 
